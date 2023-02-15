@@ -1,0 +1,286 @@
+/*Màn hình 2*/
+#Screen_2 {
+    position: absolute; 
+    left: 215px; top: 11px; 
+    width: 1079px; height: 600px;
+    background-color: rgb(204, 255, 255); 
+}
+/*Băng tải 5*/
+#BT_5 {
+    position: absolute; 
+    left: 30px; top: 484px; 
+    width: 600px; height: 50px;
+}
+/*Motor BT5*/
+#Motor_BT_5 {
+    position: absolute; 
+    left: 70px; top: 545px; 
+    width: 60px; height: 40px;
+}
+#btt_LOICHAI250ML {
+    border: none; 
+    background-color: rgb(204, 204, 204); 
+    color: rgb(255, 255, 255);   
+    text-align: center; 
+    display: inline-block;
+    font-size: 13px; 
+    font-weight: bold;
+    cursor: pointer;
+    position: absolute; 
+    width: 80px; height: 40px; 
+    left: 875px; top: 268px;
+}
+/*Nút On BT5*/
+#bttManu_OnBT5 {
+    border:rgb(0, 0, 0); 
+    position: absolute; 
+    background-color: rgb(204, 204, 204); 
+    color: rgb(0, 0, 0);   
+    text-align: center;
+    display: inline-block;
+    font-size: 13px; 
+    cursor: pointer;
+    width: 40px; height: 25px;  
+    left: 530px; top: 152px;
+}
+/*Nút Off BT5*/
+#bttManu_OffBT5 {
+    border:rgb(0, 0, 0); 
+    position: absolute; 
+    background-color: rgb(255, 0, 0); 
+    color: rgb(0, 0, 0);   
+    text-align: center;
+    display: inline-block;
+    font-size: 13px; 
+    cursor: pointer;
+    width: 40px; height: 25px;  
+    left: 580px; top: 152px;
+}
+/*Camera hệ thống phân loại chai*/
+#Camera_1 {
+    position: absolute; 
+    left: 500px; top: 300px; 
+    width: 30px; height: 70px;
+}
+/*Nút On Camera1*/
+#bttManu_OnCamera1 {
+    border:rgb(0, 0, 0); 
+    position: absolute; 
+    background-color: rgb(204, 204, 204); 
+    color: rgb(0, 0, 0);   
+    text-align: center;
+    display: inline-block;
+    font-size: 13px; 
+    cursor: pointer;
+    width: 40px; height: 25px;  
+    left: 530px; top: 186px;
+}
+/*Nút Off Camera1*/
+#bttManu_OffCamera1 {
+    border:rgb(0, 0, 0); 
+    position: absolute; 
+    background-color: rgb(255, 0, 0); 
+    color: rgb(0, 0, 0);   
+    text-align: center;
+    display: inline-block;
+    font-size: 13px; 
+    cursor: pointer;
+    width: 40px; height: 25px;  
+    left: 580px; top: 186px;
+}
+/*Xy lanh đẩy hệ thống phân loại chai*/
+#Xylanhday_1 {
+    position: absolute; 
+    left: 532px; top: 457px; 
+    width: 66px; height: 46px;
+}
+/*Nút On Xylanh đẩy 1*/
+#bttManu_OnXylanhday1 {
+    border:rgb(0, 0, 0); 
+    position: absolute; 
+    background-color: rgb(204, 204, 204); 
+    color: rgb(0, 0, 0);   
+    text-align: center;
+    display: inline-block;
+    font-size: 13px; 
+    cursor: pointer;
+    width: 40px; height: 25px;  
+    left: 530px; top: 220px;
+}
+/*Nút Off Xy lanh đẩy 1*/
+#bttManu_OffXylanhday1 {
+    border:rgb(0, 0, 0); 
+    position: absolute; 
+    background-color: rgb(255, 0, 0); 
+    color: rgb(0, 0, 0);   
+    text-align: center;
+    display: inline-block;
+    font-size: 13px; 
+    cursor: pointer;
+    width: 40px; height: 25px;  
+    left: 580px; top: 220px;
+}
+#Integer1 {
+    border:rgb(0, 0, 0); 
+    position: absolute; 
+    background-color: rgb(255, 255, 153); 
+    color: rgb(0, 0, 0);   
+    text-align: center;
+    display: inline-block;
+    font-size: 13px;
+    font-weight: bold; 
+    cursor: pointer;
+    width: 80px; height: 25px;  
+    left: 200px; top: 74px;
+}
+#Integer2 {
+    border:rgb(0, 0, 0); 
+    position: absolute; 
+    background-color: rgb(255, 255, 153); 
+    color: rgb(0, 0, 0);   
+    text-align: center;
+    display: inline-block;
+    font-size: 13px;
+    font-weight: bold; 
+    cursor: pointer;
+    width: 80px; height: 25px;  
+    left: 200px; top: 104px;
+}
+#btt_CHAI250ML {
+    border: none; 
+    background-color: rgb(204, 204, 204); 
+    color: rgb(255, 255, 255);   
+    text-align: center; 
+    display: inline-block;
+    font-size: 13px; 
+    font-weight: bold;
+    cursor: pointer;
+    position: absolute; 
+    width: 80px; height: 40px; 
+    left: 875px; top: 268px;
+}
+#Temp1 {
+    position: absolute; 
+    left: 30px; top: 484px; 
+    width: 5px; height: 5px;
+}
+#Temp2 {
+    position: absolute; 
+    left: 30px; top: 484px; 
+    width: 5px; height: 5px;
+}
+#Temp3 {
+    position: absolute; 
+    left: 30px; top: 484px; 
+    width: 5px; height: 5px;
+}
+#Temp4 {
+    position: absolute; 
+    left: 30px; top: 484px; 
+    width: 5px; height: 5px;
+}
+#btt_LOICHAI1LIT {
+    border: none; 
+    background-color: rgb(204, 204, 204); 
+    color: rgb(255, 255, 255);   
+    text-align: center; 
+    display: inline-block;
+    font-size: 13px; 
+    font-weight: bold;
+    cursor: pointer;
+    position: absolute; 
+    width: 80px; height: 40px; 
+    left: 875px; top: 325px;
+}
+#btt_LOIBINH2LIT {
+    border: none; 
+    background-color: rgb(204, 204, 204); 
+    color: rgb(255, 255, 255);   
+    text-align: center; 
+    display: inline-block;
+    font-size: 13px; 
+    font-weight: bold;
+    cursor: pointer;
+    position: absolute; 
+    width: 80px; height: 40px; 
+    left: 875px; top: 385px;
+}
+#btt_LOIBINH5LIT {
+    border: none; 
+    background-color: rgb(204, 204, 204); 
+    color: rgb(255, 255, 255);   
+    text-align: center; 
+    display: inline-block;
+    font-size: 13px; 
+    font-weight: bold;
+    cursor: pointer;
+    position: absolute; 
+    width: 80px; height: 40px; 
+    left: 875px; top: 448px;
+}
+#btt_CHAI1LIT {
+    border: none; 
+    background-color: rgb(204, 204, 204); 
+    color: rgb(255, 255, 255);   
+    text-align: center; 
+    display: inline-block;
+    font-size: 13px; 
+    font-weight: bold;
+    cursor: pointer;
+    position: absolute; 
+    width: 80px; height: 40px; 
+    left: 875px; top: 325px;
+}
+#btt_BINH2LIT {
+    border: none; 
+    background-color: rgb(204, 204, 204); 
+    color: rgb(255, 255, 255);   
+    text-align: center; 
+    display: inline-block;
+    font-size: 13px; 
+    font-weight: bold;
+    cursor: pointer;
+    position: absolute; 
+    width: 80px; height: 40px; 
+    left: 875px; top: 385px;
+}
+#btt_BINH5LIT {
+    border: none; 
+    background-color: rgb(204, 204, 204); 
+    color: rgb(255, 255, 255);   
+    text-align: center; 
+    display: inline-block;
+    font-size: 13px; 
+    font-weight: bold;
+    cursor: pointer;
+    position: absolute; 
+    width: 80px; height: 40px; 
+    left: 875px; top: 448px;
+}
+#Optical_Sensor1 {
+    position: absolute; 
+    left: 470px; top: 305px; 
+    width: 15px; height: 55px;
+}
+#Optical {
+    position: absolute; 
+    left: 472px; top: 358px; 
+    width: 12px; height: 120px;
+}
+#TB_1 {
+    position: absolute; 
+    left: 178px; top: 228px; 
+    width: 117px; height: 26px;
+}
+#TB_2 {
+    position: absolute; 
+    left: 161px; top: 220px; 
+    width: 155px; height: 51px;
+}
+#Position_Sensor7 {
+    position: absolute; 
+    left: 490px; top: 500px; 
+    width: 16px; height: 56px;
+}
+
+

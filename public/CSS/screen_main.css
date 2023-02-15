@@ -1,0 +1,576 @@
+/*Màn hình chính*/
+#Screen_Main {
+    position: absolute; 
+    left: 215px; top: 11px; 
+    width: 1030px; height: 686px;
+    background-color: rgb(116, 206, 241); 
+}
+/*Băng tải 1*/
+#BT1_1 {
+    position: absolute; 
+    left: 30px; top: 640px; 
+    width: 320px; height: 50px;
+}
+#BT1_2 {
+    position: absolute; 
+    left: 350px; top: 640px; 
+    width: 350px; height: 50px;
+}
+#BT2_1 {
+    position: absolute; 
+    left: 690px; top: 640px; 
+    width: 350px; height: 50px;
+}
+#BT2_2 {
+    position: absolute; 
+    left: 1010px; top: 640px; 
+    width: 350px; height: 50px;
+}
+#BT2_3 {
+    position: absolute; 
+    left: 1350px; top: 640px; 
+    width: 430px; height: 50px;
+}
+#BT3_1 {
+    position: absolute; 
+    left: 1300px; top: 760px; 
+    width: 460px; height: 50px;
+}
+#BT3_2 {
+    position: absolute; 
+    left: 1000px; top: 760px; 
+    width: 400px; height: 50px;
+}
+#BT4_1 {
+    position: absolute; 
+    left: 700px; top: 760px; 
+    width: 400px; height: 50px;
+}
+#BT4_2 {
+    position: absolute; 
+    left: 470px; top: 760px; 
+    width: 400px; height: 50px;
+}
+#HT1 {
+    position: absolute; 
+    left: 278px; top: 588px; 
+    width: 152px; height: 124px;
+}
+#HT2 {
+    position: absolute; 
+    left: 616px; top: 598px; 
+    width: 160px; height: 119px;
+}
+#HT3 {
+    position: absolute; 
+    left: 960px; top: 604px; 
+    width: 150px; height: 117px;
+}
+#HT4 {
+    position: absolute; 
+    left: 1275px; top: 601px; 
+    width: 155px; height: 117px;
+}
+#HT5 {
+    position: absolute; 
+    left: 960px; top: 723px; 
+    width: 202px; height: 120px;
+}
+#NapDT {
+    position: absolute; 
+    left: 968px; top: 666px; 
+    width: 258px; height: 90px;
+}
+#Nen {
+    position: absolute; 
+    left: 1690px; top: 700px; 
+    width: 225px; height: 130px;
+}
+#btt_Auto {
+    border:rgb(0, 0, 0); 
+    position: absolute; 
+    background-color: rgb(204, 204, 204); 
+    color: rgb(0, 0, 0);   
+    text-align: center;
+    display: inline-block;
+    font-size: 16px; 
+    font-weight: bold;
+    cursor: pointer;
+    width: 64px; height: 35px;  
+    left: 45px; top: 205px;
+}
+#btt_Manual {
+    border:rgb(0, 0, 0); 
+    position: absolute; 
+    background-color: rgb(204, 204, 204); 
+    color: rgb(0, 0, 0);   
+    text-align: center;
+    display: inline-block;
+    font-size: 16px;
+    font-weight: bold; 
+    cursor: pointer;
+    width: 64px; height: 37px;  
+    left: 138px; top: 203px;
+}
+#btt_Start {
+    border:rgb(0, 0, 0); 
+    position: absolute; 
+    background-color: rgb(204, 204, 204); 
+    color: rgb(0, 0, 0);   
+    text-align: center;
+    display: inline-block;
+    font-size: 16px;
+    font-weight: bold; 
+    cursor: pointer;
+    width: 110px; height: 37px;  
+    left: 70px; top: 253px;
+}
+#btt_Reset {
+    border:rgb(0, 0, 0); 
+    position: absolute; 
+    background-color: rgb(204, 204, 204); 
+    color: rgb(0, 0, 0);   
+    text-align: center;
+    display: inline-block;
+    font-size: 16px;
+    font-weight: bold; 
+    cursor: pointer;
+    width: 110px; height: 37px;  
+    left: 68px; top: 351px;
+}
+#btt_Pause {
+    border:rgb(0, 0, 0); 
+    position: absolute; 
+    background-color: rgb(204, 204, 204); 
+    color: rgb(0, 0, 0);   
+    text-align: center;
+    display: inline-block;
+    font-size: 16px;
+    font-weight: bold; 
+    cursor: pointer;
+    width: 110px; height: 37px;  
+    left: 68px; top: 301px;
+}
+#QRcode {
+    border:rgb(0, 0, 0); 
+    position: absolute; 
+    background-color: rgb(204, 204, 204); 
+    color: rgb(0, 0, 0);   
+    text-align: center;
+    display: inline-block;
+    font-size: 16px;
+    font-weight: bold; 
+    cursor: pointer;
+    width: 95px; height: 24px;  
+    left: 526px; top: 188px;
+}
+#Flow {
+    border:rgb(0, 0, 0); 
+    position: absolute; 
+    background-color: rgb(204, 204, 204); 
+    color: rgb(0, 0, 0);   
+    text-align: center;
+    display: inline-block;
+    font-size: 16px;
+    font-weight: bold; 
+    cursor: pointer;
+    width: 64px; height: 23px;  
+    left: 444px; top: 158px;
+}
+#Mass1 {
+    border:rgb(0, 0, 0); 
+    position: absolute; 
+    background-color: rgb(204, 204, 204); 
+    color: rgb(0, 0, 0);   
+    text-align: center;
+    display: inline-block;
+    font-size: 16px;
+    font-weight: bold; 
+    cursor: pointer;
+    width: 50px; height: 27px;  
+    left: 447px; top: 252px;
+}
+/*Nút nhấn LƯU*/
+#btt_Setting_Confirm {
+    border: none; 
+    background-color: rgb(0, 255, 0); 
+    color: rgb(0, 0, 0);   
+    text-align: center; 
+    display: inline-block;
+    font-size: 16px; 
+    font-weight: bold;
+    cursor: pointer;
+    position: absolute; 
+    width: 109px; height: 38px; 
+    left: 30px; top: 402px;
+}
+/*Nút nhấn SỬA*/
+#btt_Setting_Change {
+    border: none; 
+    background-color: rgb(204, 204, 204); 
+    color: rgb(0, 0, 0);   
+    text-align: center; 
+    display: inline-block;
+    font-size: 16px; 
+    font-weight: bold;
+    cursor: pointer;
+    position: absolute; 
+    width: 95px; height: 38px; 
+    left: 30px; top: 402px;
+}
+#btt_Default {
+    border:rgb(0, 0, 0); 
+    position: absolute; 
+    background-color: rgb(204, 204, 204); 
+    color: rgb(0, 0, 0);   
+    text-align: center;
+    display: inline-block;
+    font-size: 16px;
+    font-weight: bold; 
+    cursor: pointer;
+    width: 95px; height: 38px;  
+    left: 125px; top: 402px;
+}
+#Nhaploaichai {
+    border:rgb(0, 0, 0); 
+    position: absolute; 
+    background-color: rgb(204, 204, 204); 
+    color: rgb(0, 0, 0);   
+    text-align: center;
+    display: inline-block;
+    font-size: 16px;
+    font-weight: bold; 
+    cursor: pointer;
+    width: 80px; height: 23px;  
+    left: 588px; top: 125px;
+}
+#Sochai {
+    border:rgb(0, 0, 0); 
+    position: absolute; 
+    background-color: rgb(204, 204, 204); 
+    color: rgb(0, 0, 0);   
+    text-align: center;
+    display: inline-block;
+    font-size: 16px;
+    font-weight: bold; 
+    cursor: pointer;
+    width: 80px; height: 23px;  
+    left: 531px; top: 222px;
+}
+#Motor_BT_1 {
+    position: absolute; 
+    left: 70px; top: 700px; 
+    width: 60px; height: 40px;
+}
+#Motor_BT_2 {
+    position: absolute; 
+    left: 1200px; top: 590px; 
+    width: 60px; height: 40px;
+}
+#Motor_BT_3 {
+    position: absolute; 
+    left: 1620px; top: 815px; 
+    width: 60px; height: 40px;
+}
+#Motor_BT_4 {
+    position: absolute; 
+    left: 885px; top: 820px; 
+    width: 60px; height: 40px;
+}
+#BarCylinder {
+    position: absolute; 
+    left: 1510px; top: 580px; 
+    width: 128px; height: 79px;
+}
+#PushCylinder {
+    position: absolute; 
+    left: 1450px; top: 600px; 
+    width: 314px; height: 141px;
+}
+#ThungCylinder {
+    position: absolute; 
+    left: 602px; top: 713px; 
+    width: 164px; height: 67px;
+}
+#Optical_Sensor3 {
+    position: absolute; 
+    left: 1570px; top: 515px; 
+    width: 12px; height: 50px;
+}
+#Optical3 {
+    position: absolute; 
+    left: 1570px; top: 528px; 
+    width: 12px; height: 130px;
+}
+#Position_Sensor6 {
+    position: absolute; 
+    left: 730px; top: 790px; 
+    width: 16px; height: 40px;
+}
+#Count_Sensor {
+    position: absolute; 
+    left: 1400px; top: 800px;
+    width: 16px; height: 40px;
+}
+#Mass2 {
+    border:rgb(0, 0, 0); 
+    position: absolute; 
+    background-color: rgb(255, 255, 255); 
+    color: rgb(0, 0, 0);   
+    text-align: center;
+    display: inline-block;
+    font-size: 16px;
+    font-weight: bold; 
+    cursor: pointer;
+    width: 51px; height: 27px;  
+    left: 760px; top: 706px;
+}
+#Chaidiqua {
+    border:rgb(0, 0, 0); 
+    position: absolute; 
+    background-color: rgb(255, 255, 255); 
+    color: rgb(0, 0, 0);   
+    text-align: center;
+    display: inline-block;
+    font-size: 16px;
+    font-weight: bold; 
+    cursor: pointer;
+    width: 59px; height: 21px;  
+    left: 1613px; top: 515px;
+}
+#Chaitrongthung {
+    border:rgb(0, 0, 0); 
+    position: absolute; 
+    background-color: rgb(255, 255, 255); 
+    color: rgb(0, 0, 0);   
+    text-align: center;
+    display: inline-block;
+    font-size: 16px;
+    font-weight: bold; 
+    cursor: pointer;
+    width: 59px; height: 22px;  
+    left: 1423px; top: 825px;
+}
+#Nhapkhoiluong {
+    border:rgb(0, 0, 0); 
+    position: absolute; 
+    background-color: rgb(255, 255, 255); 
+    color: rgb(0, 0, 0);   
+    text-align: center;
+    display: inline-block;
+    font-size: 16px;
+    font-weight: bold; 
+    cursor: pointer;
+    width: 66px; height: 26px;  
+    left: 772px; top: 820px;
+}
+/*Nút nhấn LƯU*/
+#btt_Khoiluong_Confirm {
+    border: none; 
+    background-color: rgb(0, 0, 0); 
+    color: rgb(255, 255, 255);   
+    text-align: center; 
+    display: inline-block;
+    font-size: 13px; 
+    font-weight: bold;
+    cursor: pointer;
+    position: absolute; 
+    width: 100px; height: 40px; 
+    left: 755px; top: 860px;
+}
+/*Nút nhấn SỬA*/
+#btt_Khoiluong_Change {
+    border: none; 
+    background-color: rgb(255, 0, 0); 
+    color: rgb(255, 255, 255);   
+    text-align: center; 
+    display: inline-block;
+    font-size: 13px; 
+    font-weight: bold;
+    cursor: pointer;
+    position: absolute; 
+    width: 100px; height: 40px; 
+    left: 755px; top: 860px;
+}
+/*Nút On BT1*/
+#bttManu_OnBT1 {
+    border:rgb(0, 0, 0); 
+    position: absolute; 
+    background-color: rgb(204, 204, 204); 
+    color: rgb(0, 0, 0);   
+    text-align: center;
+    display: inline-block;
+    font-size: 13px; 
+    cursor: pointer;
+    width: 40px; height: 25px;  
+    left: 45px; top: 752px;
+}
+/*Nút Off BT1*/
+#bttManu_OffBT1 {
+    border:rgb(0, 0, 0); 
+    position: absolute; 
+    background-color: rgb(255, 0, 0); 
+    color: rgb(0, 0, 0);   
+    text-align: center;
+    display: inline-block;
+    font-size: 13px; 
+    cursor: pointer;
+    width: 40px; height: 25px;  
+    left: 95px; top: 752px;
+}
+/*Nút On BT2*/
+#bttManu_OnBT2 {
+    border:rgb(0, 0, 0); 
+    position: absolute; 
+    background-color: rgb(204, 204, 204); 
+    color: rgb(0, 0, 0);   
+    text-align: center;
+    display: inline-block;
+    font-size: 13px; 
+    cursor: pointer;
+    width: 40px; height: 25px;  
+    left: 1180px; top: 560px;
+}
+/*Nút Off BT2*/
+#bttManu_OffBT2 {
+    border:rgb(0, 0, 0); 
+    position: absolute; 
+    background-color: rgb(255, 0, 0); 
+    color: rgb(0, 0, 0);   
+    text-align: center;
+    display: inline-block;
+    font-size: 13px; 
+    cursor: pointer;
+    width: 40px; height: 25px;  
+    left: 1230px; top: 560px;
+}
+/*Nút On BT3*/
+#bttManu_OnBT3 {
+    border:rgb(0, 0, 0); 
+    position: absolute; 
+    background-color: rgb(204, 204, 204); 
+    color: rgb(0, 0, 0);   
+    text-align: center;
+    display: inline-block;
+    font-size: 13px; 
+    cursor: pointer;
+    width: 40px; height: 25px;  
+    left: 1615px; top: 860px;
+}
+/*Nút Off BT3*/
+#bttManu_OffBT3 {
+    border:rgb(0, 0, 0); 
+    position: absolute; 
+    background-color: rgb(255, 0, 0); 
+    color: rgb(0, 0, 0);   
+    text-align: center;
+    display: inline-block;
+    font-size: 13px; 
+    cursor: pointer;
+    width: 40px; height: 25px;  
+    left: 1665px; top: 860px;
+}
+/*Nút On BT4*/
+#bttManu_OnBT4 {
+    border:rgb(0, 0, 0); 
+    position: absolute; 
+    background-color: rgb(204, 204, 204); 
+    color: rgb(0, 0, 0);   
+    text-align: center;
+    display: inline-block;
+    font-size: 13px; 
+    cursor: pointer;
+    width: 40px; height: 25px;  
+    left: 880px; top: 865px;
+}
+/*Nút Off BT4*/
+#bttManu_OffBT4 {
+    border:rgb(0, 0, 0); 
+    position: absolute; 
+    background-color: rgb(255, 0, 0); 
+    color: rgb(0, 0, 0);   
+    text-align: center;
+    display: inline-block;
+    font-size: 13px; 
+    cursor: pointer;
+    width: 40px; height: 25px;  
+    left: 930px; top: 865px;
+}
+/*Nút On Cylinder Push Chai*/
+#bttManu_OnPushCylinder {
+    border:rgb(0, 0, 0); 
+    position: absolute; 
+    background-color: rgb(204, 204, 204); 
+    color: rgb(0, 0, 0);   
+    text-align: center;
+    display: inline-block;
+    font-size: 13px; 
+    cursor: pointer;
+    width: 40px; height: 25px;  
+    left: 1700px; top: 570px;
+}
+/*Nút Off Cylinder Push Chai*/
+#bttManu_OffPushCylinder {
+    border:rgb(0, 0, 0); 
+    position: absolute; 
+    background-color: rgb(255, 0, 0); 
+    color: rgb(0, 0, 0);   
+    text-align: center;
+    display: inline-block;
+    font-size: 13px; 
+    cursor: pointer;
+    width: 40px; height: 25px;  
+    left: 1750px; top: 570px;
+}
+/*Nút On Cylinder Bar Chai*/
+#bttManu_OnBarCylinder {
+    border:rgb(0, 0, 0); 
+    position: absolute; 
+    background-color: rgb(204, 204, 204); 
+    color: rgb(0, 0, 0);   
+    text-align: center;
+    display: inline-block;
+    font-size: 13px; 
+    cursor: pointer;
+    width: 40px; height: 25px;  
+    left: 1590px; top: 550px;
+}
+/*Nút Off Cylinder Bar Chai*/
+#bttManu_OffBarCylinder {
+    border:rgb(0, 0, 0); 
+    position: absolute; 
+    background-color: rgb(255, 0, 0); 
+    color: rgb(0, 0, 0);   
+    text-align: center;
+    display: inline-block;
+    font-size: 13px; 
+    cursor: pointer;
+    width: 40px; height: 25px;  
+    left: 1640px; top: 550px;
+}
+/*Nút On Cylinder Push Thung*/
+#bttManu_OnThungCylinder {
+    border:rgb(0, 0, 0); 
+    position: absolute; 
+    background-color: rgb(204, 204, 204); 
+    color: rgb(0, 0, 0);   
+    text-align: center;
+    display: inline-block;
+    font-size: 13px; 
+    cursor: pointer;
+    width: 40px; height: 25px;  
+    left: 600px; top: 705px;
+}
+/*Nút Off Cylinder Push Thung*/
+#bttManu_OffThungCylinder {
+    border:rgb(0, 0, 0); 
+    position: absolute; 
+    background-color: rgb(255, 0, 0); 
+    color: rgb(0, 0, 0);   
+    text-align: center;
+    display: inline-block;
+    font-size: 13px; 
+    cursor: pointer;
+    width: 40px; height: 25px;  
+    left: 650px; top: 705px;
+}

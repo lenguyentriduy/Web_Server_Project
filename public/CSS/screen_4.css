@@ -1,0 +1,322 @@
+/*Màn hình chính*/
+#Screen_4 {
+    position: absolute; 
+    left: 215px; top: 11px; 
+    width: 1052px; height: 686px;
+    background-color: rgb(204, 255, 255); 
+}
+/*Camera hệ thống kiểm tra nhãn*/
+#Camera_2 {
+    position: absolute; 
+    left: 440px; top: 285px; 
+    width: 40px; height: 90px;
+}
+/*Băng tải 10*/
+#BT_10 {
+    position: absolute; 
+    left: 30px; top: 504px; 
+    width: 600px; height: 50px;
+}
+/*Motor BT5*/
+#Motor_BT_10 {
+    position: absolute; 
+    left: 70px; top: 562px; 
+    width: 60px; height: 40px;
+}
+/*Xy lanh đẩy hệ thống kiểm tra nhãn chai*/
+#Xylanhday_2 {
+    position: absolute; 
+    left: 466px; top: 478px; 
+    width: 66px; height: 46px;
+}
+/*Nút On BT10*/
+#bttManu_OnBT10 {
+    border:rgb(0, 0, 0); 
+    position: absolute; 
+    background-color: rgb(204, 204, 204); 
+    color: rgb(0, 0, 0);   
+    text-align: center;
+    display: inline-block;
+    font-size: 13px; 
+    cursor: pointer;
+    width: 40px; height: 25px;  
+    left: 810px; top: 132px;
+}
+/*Nút Off BT10*/
+#bttManu_OffBT10 {
+    border:rgb(0, 0, 0); 
+    position: absolute; 
+    background-color: rgb(255, 0, 0); 
+    color: rgb(0, 0, 0);   
+    text-align: center;
+    display: inline-block;
+    font-size: 13px; 
+    cursor: pointer;
+    width: 40px; height: 25px;  
+    left: 860px; top: 132px;
+}
+/*Nút On Camera2*/
+#bttManu_OnCamera2 {
+    border:rgb(0, 0, 0); 
+    position: absolute; 
+    background-color: rgb(204, 204, 204); 
+    color: rgb(0, 0, 0);   
+    text-align: center;
+    display: inline-block;
+    font-size: 13px; 
+    cursor: pointer;
+    width: 40px; height: 25px;  
+    left: 810px; top: 166px;
+}
+/*Nút Off Camera2*/
+#bttManu_OffCamera2 {
+    border:rgb(0, 0, 0); 
+    position: absolute; 
+    background-color: rgb(255, 0, 0); 
+    color: rgb(0, 0, 0);   
+    text-align: center;
+    display: inline-block;
+    font-size: 13px; 
+    cursor: pointer;
+    width: 40px; height: 25px;  
+    left: 860px; top: 166px;
+}
+/*Nút On Xylanhday2*/
+#bttManu_OnXylanhday2 {
+    border:rgb(0, 0, 0); 
+    position: absolute; 
+    background-color: rgb(204, 204, 204); 
+    color: rgb(0, 0, 0);   
+    text-align: center;
+    display: inline-block;
+    font-size: 13px; 
+    cursor: pointer;
+    width: 40px; height: 25px;  
+    left: 810px; top: 200px;
+}
+/*Nút Off Xylanhday2*/
+#bttManu_OffXylanhday2 {
+    border:rgb(0, 0, 0); 
+    position: absolute; 
+    background-color: rgb(255, 0, 0); 
+    color: rgb(0, 0, 0);   
+    text-align: center;
+    display: inline-block;
+    font-size: 13px; 
+    cursor: pointer;
+    width: 40px; height: 25px;  
+    left: 860px; top: 200px;
+}
+#Optical_Sensor2 {
+    position: absolute; 
+    left: 415px; top: 305px; 
+    width: 15px; height: 55px;
+}
+#Optical2 {
+    position: absolute; 
+    left: 417px; top: 358px; 
+    width: 12px; height: 120px;
+}
+#Integer4 {
+    border:rgb(0, 0, 0); 
+    position: absolute; 
+    background-color: rgb(255, 255, 255); 
+    color: rgb(0, 0, 128);   
+    text-align: center;
+    display: inline-block;
+    font-size: 13px;
+    font-weight: bold; 
+    cursor: pointer;
+    width: 40px; height: 25px;  
+    left: 370px; top: 143px;
+}
+#Integer5 {
+    border:rgb(0, 0, 0); 
+    position: absolute; 
+    background-color: rgb(255, 255, 255); 
+    color: rgb(0, 0, 128);   
+    text-align: center;
+    display: inline-block;
+    font-size: 13px;
+    font-weight: bold; 
+    cursor: pointer;
+    width: 40px; height: 25px;  
+    left: 370px; top: 173px;
+}
+#Integer3 {
+    border:rgb(0, 0, 0); 
+    position: absolute; 
+    background-color: rgb(255, 255, 255); 
+    color: rgb(0, 0, 0);   
+    text-align: center;
+    display: inline-block;
+    font-size: 13px;
+    font-weight: bold; 
+    cursor: pointer;
+    width: 161px; height: 25px;  
+    left: 40px; top: 200px;
+}
+#MN_CHUADAT {
+    border:rgb(0, 0, 0); 
+    position: absolute; 
+    background-color: rgb(255, 255, 255); 
+    color: rgb(0, 0, 0);   
+    text-align: center;
+    display: inline-block;
+    font-size: 13px;
+    font-weight: bold; 
+    cursor: pointer;
+    width: 60px; height: 25px;  
+    left: 940px; top: 360px;
+}
+#btt_MNCD {
+    border: none; 
+    background-color: rgb(204, 204, 204); 
+    color: rgb(255, 255, 255);   
+    text-align: center; 
+    display: inline-block;
+    font-size: 13px; 
+    font-weight: bold;
+    cursor: pointer;
+    position: absolute; 
+    width: 80px; height: 40px; 
+    left: 820px; top: 325px;
+}
+#CHAI_BT {
+    position: absolute; 
+    left: 660px; top: 250px; 
+    width: 99px; height: 258px;
+}
+#CHAI_SMV {
+    position: absolute; 
+    left: 660px; top: 250px; 
+    width: 99px; height: 258px;
+}
+#CHAI_MNCD {
+    position: absolute; 
+    left: 660px; top: 250px; 
+    width: 99px; height: 258px;
+}
+#CHAI_NDDR {
+    position: absolute; 
+    left: 660px; top: 250px; 
+    width: 99px; height: 258px;
+}
+#btt_BT {
+    border: none; 
+    background-color: rgb(204, 204, 204); 
+    color: rgb(255, 255, 255);   
+    text-align: center; 
+    display: inline-block;
+    font-size: 13px; 
+    font-weight: bold;
+    cursor: pointer;
+    position: absolute; 
+    width: 80px; height: 40px; 
+    left: 820px; top: 265px;
+}
+#btt_NDDR {
+    border: none; 
+    background-color: rgb(204, 204, 204); 
+    color: rgb(255, 255, 255);   
+    text-align: center; 
+    display: inline-block;
+    font-size: 13px; 
+    font-weight: bold;
+    cursor: pointer;
+    position: absolute; 
+    width: 80px; height: 40px; 
+    left: 820px; top: 385px;
+}
+#btt_SMV {
+    border: none; 
+    background-color: rgb(204, 204, 204); 
+    color: rgb(255, 255, 255);   
+    text-align: center; 
+    display: inline-block;
+    font-size: 13px; 
+    font-weight: bold;
+    cursor: pointer;
+    position: absolute; 
+    width: 80px; height: 40px; 
+    left: 820px; top: 445px;
+}
+/*Nút nhấn LƯU*/
+#btt_MNCD_Confirm {
+    border: none; 
+    background-color: rgb(0, 0, 0); 
+    color: rgb(255, 255, 255);   
+    text-align: center; 
+    display: inline-block;
+    font-size: 13px; 
+    font-weight: bold;
+    cursor: pointer;
+    position: absolute; 
+    width: 100px; height: 40px; 
+    left: 920px; top: 210px;
+}
+/*Nút nhấn SỬA*/
+#btt_MNCD_Change {
+    border: none; 
+    background-color: rgb(255, 0, 0); 
+    color: rgb(255, 255, 255);   
+    text-align: center; 
+    display: inline-block;
+    font-size: 13px; 
+    font-weight: bold;
+    cursor: pointer;
+    position: absolute; 
+    width: 100px; height: 40px; 
+    left: 920px; top: 210px;
+}
+#MAVACH {
+    position: absolute; 
+    left: 820px; top: 500px; 
+    width: 173px; height: 58px;
+}
+/*Nút nhấn LƯU*/
+#btt_SMV_Confirm {
+    border: none; 
+    background-color: rgb(0, 0, 0); 
+    color: rgb(255, 255, 255);   
+    text-align: center; 
+    display: inline-block;
+    font-size: 13px; 
+    font-weight: bold;
+    cursor: pointer;
+    position: absolute; 
+    width: 100px; height: 40px; 
+    left: 920px; top: 210px;
+}
+/*Nút nhấn SỬA*/
+#btt_SMV_Change {
+    border: none; 
+    background-color: rgb(255, 0, 0); 
+    color: rgb(255, 255, 255);   
+    text-align: center; 
+    display: inline-block;
+    font-size: 13px; 
+    font-weight: bold;
+    cursor: pointer;
+    position: absolute; 
+    width: 100px; height: 40px; 
+    left: 920px; top: 210px;
+}
+#QR_code_sai {
+    border:rgb(0, 0, 0); 
+    position: absolute; 
+    background-color: rgb(255, 255, 255); 
+    color: rgb(0, 0, 0);   
+    text-align: center;
+    display: inline-block;
+    font-size: 13px;
+    font-weight: bold; 
+    cursor: pointer;
+    width: 130px; height: 25px;  
+    left: 840px; top: 560px;
+}
+#Position_Sensor8 {
+    position: absolute; 
+    left: 460px; top: 521px; 
+    width: 16px; height: 56px;
+}

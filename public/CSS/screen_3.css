@@ -1,0 +1,118 @@
+/*Màn hình chính*/
+#Screen_3 {
+    position: absolute; 
+    left: 215px; top: 11px; 
+    width: 1068px; height: 600px;
+    background-color: rgb(204, 255, 255); 
+}
+/*Băng tải 8*/
+#BT_8 {
+    position: absolute; 
+    left: 80px; top: 373px; 
+    width: 900px; height: 68px;
+}
+/*Motor BT8*/
+#Motor_BT_8 {
+    position: absolute; 
+    left: 100px; top: 460px; 
+    width: 60px; height: 40px;
+}
+
+#DN1 {
+    position: absolute; 
+    left: 705px; top: 263px; 
+    width: 40px; height: 36px;
+}
+#DN2 {
+    position: absolute; 
+    left: 541px; top: 336px; 
+    width: 27px; height: 29px;
+}
+#Xylanhkep1 {
+    position: absolute; 
+    left: 340px; top: 340px; 
+    width: 230px; height: 112px;
+}
+/*Nút On BT8*/
+#bttManu_OnBT8 {
+    border:rgb(0, 0, 0); 
+    position: absolute; 
+    background-color: rgb(204, 204, 204); 
+    color: rgb(0, 0, 0);   
+    text-align: center;
+    display: inline-block;
+    font-size: 13px; 
+    cursor: pointer;
+    width: 40px; height: 25px;  
+    left: 340px; top: 170px;
+}
+/*Nút Off BT8*/
+#bttManu_OffBT8 {
+    border:rgb(0, 0, 0); 
+    position: absolute; 
+    background-color: rgb(255, 0, 0); 
+    color: rgb(0, 0, 0);   
+    text-align: center;
+    display: inline-block;
+    font-size: 13px; 
+    cursor: pointer;
+    width: 40px; height: 25px;  
+    left: 390px; top: 170px;
+}
+/*Nút On Xylanhkep*/
+#bttManu_OnXylanhkep {
+    border:rgb(0, 0, 0); 
+    position: absolute; 
+    background-color: rgb(204, 204, 204); 
+    color: rgb(0, 0, 0);   
+    text-align: center;
+    display: inline-block;
+    font-size: 13px; 
+    cursor: pointer;
+    width: 40px; height: 25px;  
+    left: 340px; top: 204px;
+}
+/*Nút Off Xylanhkep*/
+#bttManu_OffXylanhkep {
+    border:rgb(0, 0, 0); 
+    position: absolute; 
+    background-color: rgb(255, 0, 0); 
+    color: rgb(0, 0, 0);   
+    text-align: center;
+    display: inline-block;
+    font-size: 13px; 
+    cursor: pointer;
+    width: 40px; height: 25px;  
+    left: 390px; top: 204px;
+}
+/*Nút On Maydannhan*/
+#bttManu_OnMaydannhan {
+    border:rgb(0, 0, 0); 
+    position: absolute; 
+    background-color: rgb(204, 204, 204); 
+    color: rgb(0, 0, 0);   
+    text-align: center;
+    display: inline-block;
+    font-size: 13px; 
+    cursor: pointer;
+    width: 40px; height: 25px;  
+    left: 340px; top: 238px;
+}
+/*Nút Off Maydannhan*/
+#bttManu_OffMaydannhan {
+    border:rgb(0, 0, 0); 
+    position: absolute; 
+    background-color: rgb(255, 0, 0); 
+    color: rgb(0, 0, 0);   
+    text-align: center;
+    display: inline-block;
+    font-size: 13px; 
+    cursor: pointer;
+    width: 40px; height: 25px;  
+    left: 390px; top: 238px;
+}
+#Position_Sensor5 {
+    position: absolute; 
+    left: 470px; top: 430px; 
+    width: 16px; height: 40px;
+}

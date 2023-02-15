@@ -1,0 +1,369 @@
+<html>
+    <!-- Phần Header của Website -->
+    <head>
+        <!-- ////////////// GỌI CÁC CSS //////////////  -->
+        <link rel="stylesheet" href= "CSS/login.css">
+        <link rel="stylesheet" href= "CSS/slidebar.css">
+        <link rel="stylesheet" href= "CSS/screen_main.css">
+        <link rel="stylesheet" href= "CSS/screen_1.css">
+        <link rel="stylesheet" href= "CSS/screen_2.css">
+        <link rel="stylesheet" href= "CSS/screen_3.css">
+        <link rel="stylesheet" href= "CSS/screen_4.css">
+        <link rel="stylesheet" href= "CSS/screen_5.css">
+        <!-- ////////////// CHƯƠNG TRÌNH HỆ THỐNG //////////////  -->
+        <title>Scada hệ thống giám sát trên internet</title>
+        <script src = "jquery.js"></script>
+        <script src = "js/FC1_Common.js"></script>
+        <script src = "js/FC2_UserManagement.js"></script>
+        <script src = "js/FC3_MainScreen.js"></script>
+        <script src = "js/FC4_Screen4.js"></script>
+        <script src = "js/FC5_Screen2.js"></script>
+        <script src = "socket.io/socket.io.js"></script>
+        <script>
+            var socket = io("localhost:3000") // IP tĩnh (hoặc IP động, hoặc localhost)
+        </script>
+        <!-- ////////////// CHƯƠNG TRÌNH ĐĂNG NHẬP HỆ THỐNG //////////////  -->
+        <div id="div_login">
+            <div id="id01" class="modal">
+                <form id = "modal-content1" class="modal-content animate">
+                <div id = "img_container" class="imgcontainer">
+                    <span id = "closebtt" onclick="document.getElementById('id01').style.display='none'; logout();" class="close" title="Close Modal">&times;</span>
+                    <img id = "img_avatar" src="images/user.png" alt="Avatar" class="avatar">
+                </div>
+            
+                <div id = "log_container" class="container">
+                    <label for="uname"><b>Username</b></label>
+                    <input id = "inputuser" type="text" placeholder="Enter Username" name="uname" required>
+            
+                    <label for="psw"><b>Password</b></label>
+                    <input id = "inputpass" type="password" placeholder="Enter Password" name="psw" required>
+                    
+                    <button id = "bttlogin1" type="button" onclick="login();">Login</button>
+                    <label>
+                    <input type="checkbox" checked="checked" name="remember"> Remember me
+                    </label>
+                </div>
+            
+                <div id = "login_container" class="container" style="background-color:#f1f1f1">
+                    <button id = "bttcancle" type="button" onclick="document.getElementById('id01').style.display='none'; logout();" class="cancelbtn">Cancel</button>
+                    <span id = "psw" class="psw">Forgot <a href="#">password?</a></span>
+                </div>
+                </form>
+            </div>
+        </div>
+    </head>
+     <!-- Phần thân của website -->
+     <body>
+        <!-- ////////////// Code cho slidebar////////////// -->
+            <div id = "slidebar">
+                <!--Nút đăng nhập/đăng xuất-->
+                <button id="bttLogin" class="btn" onclick="login();
+                        window.location.reload();
+                ">ĐĂNG NHẬP</button>
+                <button id="bttLogout" class="btn" onclick="logout();
+                ">ĐĂNG XUẤT</button>
+                <!--Nút chọn màn hình chính-->
+                <button id="btt_Screen_Main" onclick=" 
+                    fn_ScreenChange('Screen_Main','Screen_1','Screen_2','Screen_3','Screen_4','Screen_5');
+                ">MAIN SCREEN</button>
+                <!--Nút chọn màn hình 1-->
+                <button id="btt_Screen_1" onclick=" 
+                    fn_ScreenChange('Screen_1','Screen_Main','Screen_2','Screen_3','Screen_4','Screen_5');
+                ">HT CHIẾT RÓT</button>
+                <!--Nút chọn màn hình 2-->
+                <button id="btt_Screen_2" onclick=" 
+                    fn_ScreenChange('Screen_2','Screen_Main','Screen_1','Screen_3','Screen_4','Screen_5');
+                ">HT PHÂN LOẠI CHAI</button>
+                <!--Nút chọn màn hình 3-->
+                <button id="btt_Screen_3" onclick=" 
+                    fn_ScreenChange('Screen_3','Screen_2','Screen_Main','Screen_1','Screen_4','Screen_5');
+                ">HT DÁN NHÃN CHAI</button>
+                 <!--Nút chọn màn hình 4-->
+                <button id="btt_Screen_4" onclick=" 
+                    fn_ScreenChange('Screen_4','Screen_2','Screen_Main','Screen_1','Screen_3','Screen_5');
+                ">HTKT NHÃN VÀ MỨC DẦU</button>
+                 <!--Nút chọn màn hình 5-->
+                <button id="btt_Screen_5" onclick=" 
+                    fn_ScreenChange('Screen_5','Screen_2','Screen_Main','Screen_1','Screen_3','Screen_4');
+                ">HTKT ĐÓNG THÙNG</button>
+            </div>
+              <!-- //////////////Code cho màn hình 2////////////// -->
+            <div id = "Screen_2">
+                <img src="images/HTPLC.PNG">
+                <img id = "Position_Sensor7" ><script> fn_SymbolStatus("Position_Sensor7", "Sensor3", "M_Position_Sensor_7") </script>
+                <img id = "BT_5" ><script> fn_SymbolStatus("BT_5", "BT", "Q_BT5") </script>
+                <img id = "Motor_BT_5" ><script> fn_SymbolStatus("Motor_BT_5", "Motor", "Q_BT5") </script>
+                <img id = "Camera_1" ><script> fn_SymbolStatus("Camera_1", "Camera1", "Q_CAMERA_HTKTKT") </script>
+                <img id = "Xylanhday_1" ><script> fn_SymbolStatus("Xylanhday_1", "Xylanhday", "Q_Cylinder_HTKT") </script>
+                <img id = "Optical_Sensor1" ><script> fn_SymbolStatus("Optical_Sensor1", "Sensor1", "M_Optical_Sensor_1") </script>
+                <img id = "Optical" ><script> fn_SymbolStatus("Optical", "Optical", "M_Optical_Sensor_1") </script>
+                <img id = "TB_1" ><script> fn_SymbolStatus("TB_1", "TB1", "HIEN_3") </script>
+                <img id = "TB_2" ><script> fn_SymbolStatus("TB_2", "TB2", "HIEN_1") </script>
+                <img id = "Temp1" ><script> fn_SymbolStatusnew("Temp1", "Temp", "Temp_1", "btt_CHAI250ML", "btt_LOICHAI250ML") </script>
+                <img id = "Temp2" ><script> fn_SymbolStatusnew("Temp2", "Temp", "Temp_2", "btt_CHAI1LIT", "btt_LOICHAI1LIT") </script>
+                <img id = "Temp3" ><script> fn_SymbolStatusnew("Temp3", "Temp", "Temp_3", "btt_BINH2LIT", "btt_LOIBINH2LIT") </script>
+                <img id = "Temp4" ><script> fn_SymbolStatusnew("Temp4", "Temp", "Temp_4", "btt_BINH5LIT", "btt_LOIBINH5LIT") </script>
+                <!--Nút nhấn Manual-->
+                <button id="bttManu_OnBT5" onclick= " fn_ChangeColor('M_BT5','cmd_BT5','bttManu_OnBT5');">ON</button>
+                <button id="bttManu_OffBT5" onclick= " fn_ChangeColoroff('M_BT5','cmd_BT5','bttManu_OffBT5');">OFF</button>
+                <button id="bttManu_OnCamera1" onclick= " fn_ChangeColor('M_CAMERA_HTKTKT','cmd_Camera1','bttManu_OnCamera1');">ON</button>
+                <button id="bttManu_OffCamera1" onclick= " fn_ChangeColoroff('M_CAMERA_HTKTKT','cmd_Camera1','bttManu_OffCamera1');">OFF</button>
+                <button id="bttManu_OnXylanhday1" onclick= " fn_ChangeColor('M_Cylinder_HTKT','cmd_Xylanhday1','bttManu_OnXylanhday1');">ON</button>
+                <button id="bttManu_OffXylanhday1" onclick= " fn_ChangeColoroff('M_Cylinder_HTKT','cmd_Xylanhday1','bttManu_OffXylanhday1');">OFF</button>
+        <!-- //////////////Nút nhấn lỗi////////////// -->    
+                <button id="btt_LOICHAI250ML" onclick= " fn_ChangeColoroff1('Chai_250ml','cmd_LOICHAI250ML','btt_LOICHAI250ML');">1</button>
+                <button id="btt_LOICHAI1LIT" onclick= " fn_ChangeColoroff1('Chai_1lit','cmd_LOICHAI1LIT','btt_LOICHAI1LIT');">2</button>
+                <button id="btt_LOIBINH2LIT" onclick= " fn_ChangeColoroff1('Binh_2lit','cmd_LOIBINH2LIT','btt_LOIBINH2LIT');">3</button>
+                <button id="btt_LOIBINH5LIT" onclick= " fn_ChangeColoroff1('Binh_5lit','cmd_LOIBINH5LIT','btt_LOIBINH5LIT');">4</button>
+                <button id="btt_CHAI250ML" onclick= " fn_ChangeColor('Btt_Chai_250ml','cmd_CHAI250ML','btt_CHAI250ML');">1</button>
+                <button id="btt_CHAI1LIT" onclick= " fn_ChangeColor('Btt_Chai_1lit','cmd_CHAI1LIT','btt_CHAI1LIT');">2</button>
+                <button id="btt_BINH2LIT" onclick= " fn_ChangeColor('Btt_Binh_2lit','cmd_BINH2LIT','btt_BINH2LIT');">3</button>
+                <button id="btt_BINH5LIT" onclick= " fn_ChangeColor('Btt_Binh_5lit','cmd_BINH5LIT','btt_BINH5LIT');">4</button>
+                <!--Tag dạng Số nguyên-->
+                <!--<label>Số lon qua cảm biến:</label>-->
+                <input id="Integer1" disabled="disabled" type="text" />
+                <script>fn_IOFieldDataShow("Count_Lon_HTKTKT", "Integer1", 0)</script>
+                 <br /><br />
+                <input id="Integer2" disabled="disabled" type="text" />
+                <script>fn_IOFieldDataShow("Count_SPKT", "Integer2", 0)</script>
+                 <br /><br />       
+            </div>
+        <!-- //////////////Code cho màn hình chính////////////// -->
+            <div id = "Screen_Main">
+                <img src="images/Main_Screen.PNG">
+                <img id = "Nen" ><script> fn_SymbolStatus("Nen", "Nen", "Temp") </script>
+                <img id = "Position_Sensor6" ><script> fn_SymbolStatus("Position_Sensor6", "Sensor3", "M_Position_Sensor_6") </script>
+                <img id = "Count_Sensor" ><script> fn_SymbolStatus("Count_Sensor", "Sensor3", "Temp") </script>
+                <img id = "BT1_1" ><script> fn_SymbolStatus("BT1_1", "BT", "Q_BT1") </script>
+                <img id = "BT1_2" ><script> fn_SymbolStatus("BT1_2", "BT", "Q_BT1") </script>
+                <img id = "BT2_1" ><script> fn_SymbolStatus("BT2_1", "BT", "Q_BT2") </script>
+                <img id = "BT2_2" ><script> fn_SymbolStatus("BT2_2", "BT", "Q_BT2") </script>
+                <img id = "BT2_3" ><script> fn_SymbolStatus("BT2_3", "BT", "Q_BT2") </script>
+                <img id = "BT3_2" ><script> fn_SymbolStatus("BT3_2", "BT", "Q_BT3") </script>
+                <img id = "BT3_1" ><script> fn_SymbolStatus("BT3_1", "BT", "Q_BT3") </script>
+                <img id = "BT4_2" ><script> fn_SymbolStatus("BT4_2", "BT", "Q_BT4") </script>
+                <img id = "BT4_1" ><script> fn_SymbolStatus("BT4_1", "BT", "Q_BT4") </script>
+                <img id = "HT1" ><script> fn_SymbolStatus("HT1", "HTPLC", "Temp") </script>
+                <img id = "HT2" ><script> fn_SymbolStatus("HT2", "HTCR", "Temp") </script>
+                <img id = "HT3" ><script> fn_SymbolStatus("HT3", "HTDN", "Temp") </script>
+                <img id = "HT4" ><script> fn_SymbolStatus("HT4", "HTKTN", "Temp") </script>
+                <img id = "NapDT" ><script> fn_SymbolStatus("NapDT", "KhauDT", "Temp") </script>
+                <img id = "HT5" ><script> fn_SymbolStatus("HT5", "HTDT", "Temp") </script>
+                <img id = "Motor_BT_1" ><script> fn_SymbolStatus("Motor_BT_1", "Motor", "Q_BT1") </script>
+                <img id = "Motor_BT_2" ><script> fn_SymbolStatus("Motor_BT_2", "Motor", "Q_BT2") </script>
+                <img id = "Motor_BT_3" ><script> fn_SymbolStatus("Motor_BT_3", "Motornguoc", "Q_BT3") </script>
+                <img id = "Motor_BT_4" ><script> fn_SymbolStatus("Motor_BT_4", "Motornguoc", "Q_BT4") </script>
+                <img id = "BarCylinder" ><script> fn_SymbolStatus("BarCylinder", "Xylanhchan", "Q_Cylinder_Bar_Lon") </script>
+                <img id = "PushCylinder" ><script> fn_SymbolStatus("PushCylinder", "Xylanhdaychai", "Q_Cylinder_Push_Lon") </script>
+                <img id = "ThungCylinder" ><script> fn_SymbolStatus("ThungCylinder", "Xylanhdaythung", "Q_Cylinder_Push_Thung") </script>
+                <img id = "Optical3" ><script> fn_SymbolStatus("Optical3", "Optical3", "M_Optical_Sensor_3") </script>
+                <img id = "Optical_Sensor3" ><script> fn_SymbolStatus("Optical_Sensor3", "Sensor1", "M_Optical_Sensor_3") </script>
+                
+                
+
+                <input id="QRcode" disabled="disabled" type="text" />
+                <script>fn_IOFieldDataShow("QR_code", "QRcode", 0)</script>
+                 <br /><br />
+                <input id="Flow" disabled="disabled" type="text" />
+                <script>fn_IOFieldDataShow("Level_Production", "Flow", 0)</script>
+                 <br /><br />
+                <input id="Mass1" disabled="disabled" type="text" />
+                <script>fn_IOFieldDataShow("Khoi_luong", "Mass1", 1)</script>
+                 <br /><br />
+                <input id="Mass2" disabled="disabled" type="text" />
+                <script>fn_IOFieldDataShow("Khoi_luong", "Mass2", 1)</script>
+                 <br /><br />
+                <input id="Chaidiqua" disabled="disabled" type="text" />
+                <script>fn_IOFieldDataShow("Count_Lon_Di_Qua", "Chaidiqua", 0)</script>
+                 <br /><br />
+                <input id="Chaitrongthung" disabled="disabled" type="text" />
+                <script>fn_IOFieldDataShow("Count_Lon_Trong_Thung", "Chaitrongthung", 0)</script>
+                 <br /><br />
+
+                <button id="btt_Auto" onclick= " fn_ChangeColor('M_Mode','cmd_Mode','btt_Auto');">Auto</button>
+                <button id="btt_Manual" onclick= " fn_ChangeColorManual('M_Mode','cmd_Mode','btt_Manual');">Manual</button>
+                <button id="btt_Start" onclick= " fn_ChangeColor('M_Start','cmd_Start','btt_Start');">Start</button>
+                <button id="btt_Reset" onclick= " fn_ChangeColor('M_RESET','cmd_Reset','btt_Reset');">Reset</button>
+                <button id="btt_Pause" onclick= " fn_Buttonx('M_Pause','btt_Pause');">Pause</button>
+                <!-- Nút nhấn chạy động cơ -->
+                <!-- <button id="btt_PAUSE" onclick= "socket.emit('Client-send-cmdM1', true);">PAUSE</button>-->
+                <!-- Nút nhấn dừng động cơ -->
+                <!-- <button id="btt_RUN" onclick= "socket.emit('Client-send-cmdM1', false);">RUN</button>-->
+
+                <!--Nút nhấn sửa/lưu - Lưu ý: Nút nhấn lưu phải nằm trước nút nhấn sửa-->
+                <button id="btt_Setting_Confirm" onclick= "fn_Setting_ConfirmBtt()">Confirm</button> 
+                <button id="btt_Setting_Change" onclick= "fn_Setting_ChangeBtt()">Setting</button> 
+                <button id="btt_Default" onclick= " fn_ChangeColor('Default','cmd_Default','btt_Default');">Default</button>
+
+                <input id="Nhaploaichai" disabled="disabled" type="text" />
+                <script>fn_Setting_IOField_IO("Level_Production", "Nhaploaichai", 0);</script>
+                <br /><br />
+                
+                <input id="Sochai" disabled="disabled" type="text" />   
+                <script>fn_Setting_IOField_IO("So_lon_nhap_vao", "Sochai", 0);</script>
+                <br /><br />
+
+                <!--Nút nhấn sửa/lưu - Lưu ý: Nút nhấn lưu phải nằm trước nút nhấn sửa-->
+                <button id="btt_Khoiluong_Confirm" onclick= "fn_Khoiluong_ConfirmBtt()">Confirm</button> 
+                <button id="btt_Khoiluong_Change" onclick= "fn_Khoiluong_ChangeBtt()">Setting</button> 
+
+                <input id="Nhapkhoiluong" disabled="disabled" type="text" />
+                <script>fn_Khoiluong_IOField_IO("Khoi_luong_TT", "Nhapkhoiluong", 1);</script>
+                <br /><br />
+                 <!--Nút nhấn Manual-->
+                <button id="bttManu_OnBT1" onclick= " fn_ChangeColor('M_BT1','cmd_BT1','bttManu_OnBT1');">ON</button>
+                <button id="bttManu_OffBT1" onclick= " fn_ChangeColoroff('M_BT1','cmd_BT1','bttManu_OffBT1');">OFF</button>
+                <button id="bttManu_OnBT2" onclick= " fn_ChangeColor('M_BT2','cmd_BT2','bttManu_OnBT2');">ON</button>
+                <button id="bttManu_OffBT2" onclick= " fn_ChangeColoroff('M_BT2','cmd_BT2','bttManu_OffBT2');">OFF</button>
+                <button id="bttManu_OnBT3" onclick= " fn_ChangeColor('M_BT3','cmd_BT3','bttManu_OnBT3');">ON</button>
+                <button id="bttManu_OffBT3" onclick= " fn_ChangeColoroff('M_BT3','cmd_BT3','bttManu_OffBT3');">OFF</button>
+                <button id="bttManu_OnBT4" onclick= " fn_ChangeColor('M_BT4','cmd_BT4','bttManu_OnBT4');">ON</button>
+                <button id="bttManu_OffBT4" onclick= " fn_ChangeColoroff('M_BT4','cmd_BT4','bttManu_OffBT4');">OFF</button>
+                <button id="bttManu_OnPushCylinder" onclick= " fn_ChangeColor('M_Cylinder_Push_Lon','cmd_PushCylinder','bttManu_OnPushCylinder');">ON</button>
+                <button id="bttManu_OffPushCylinder" onclick= " fn_ChangeColoroff('M_Cylinder_Push_Lon','cmd_PushCylinder','bttManu_OffPushCylinder');">OFF</button>
+                <button id="bttManu_OnBarCylinder" onclick= " fn_ChangeColor('M_Cylinder_Bar_Lon','cmd_BarCylinder','bttManu_OnBarCylinder');">ON</button>
+                <button id="bttManu_OffBarCylinder" onclick= " fn_ChangeColoroff('M_Cylinder_Bar_Lon','cmd_BarCylinder','bttManu_OffBarCylinder');">OFF</button>
+                <button id="bttManu_OnThungCylinder" onclick= " fn_ChangeColor('M_Cylinder_Push_Thung','cmd_ThungCylinder','bttManu_OnThungCylinder');">ON</button>
+                <button id="bttManu_OffThungCylinder" onclick= " fn_ChangeColoroff('M_Cylinder_Push_Thung','cmd_ThungCylinder','bttManu_OffThungCylinder');">OFF</button>
+
+            </div> 
+        <!-- //////////////Code cho màn hình 1////////////// -->
+            <div id = "Screen_1">
+                <img src="images/HTCR.PNG">
+                <img id = "BT_6" ><script> fn_SymbolStatus("BT_6", "BT", "Q_BT6") </script>
+                <img id = "Motor_BT_6" ><script> fn_SymbolStatus("Motor_BT_6", "Motor", "Q_BT6") </script>
+                <img id = "BT_7" ><script> fn_SymbolStatus("BT_7", "BT", "Q_BT7") </script>
+                <img id = "Position_Sensor3" ><script> fn_SymbolStatus("Position_Sensor3", "Sensor3", "M_Position_Sensor_3") </script>
+                <img id = "Motor_BT_7" ><script> fn_SymbolStatus("Motor_BT_7", "Motor", "Q_BT7") </script>
+                <img id = "Pump" ><script> fn_SymbolStatus("Pump", "Pump", "Q_Pump") </script>
+                <img id = "Truc_Quay" ><script> fn_SymbolStatus("Truc_Quay", "Quaynap", "Q_Motor_Quay") </script>
+                <img id = "Motor_Quay" ><script> fn_SymbolStatus("Motor_Quay", "Motorquay", "Q_Motor_Quay") </script>
+                <img id = "MAY_CAP_NAP" ><script> fn_SymbolStatus("MAY_CAP_NAP", "Capnap", "Q_MAY_CAP_NAP") </script>
+                <img id = "Motor_Mamxoay1" ><script> fn_SymbolStatus("Motor_Mamxoay1", "Motor1", "Q_Mam_Xoay") </script>
+                <img id = "Mamxoay1" ><script> fn_SymbolStatus("Mamxoay1", "Mamxoay", "Q_Mam_Xoay") </script>
+                <img id = "Xylanhnang1" ><script> fn_SymbolStatus("Xylanhnang1", "Xylanhnang", "Q_Xylanh_Nang") </script>
+                <img id = "Position_Sensor1" ><script> fn_SymbolStatus("Position_Sensor1", "Sensor2", "M_Position_Sensor_1") </script>
+                <img id = "Position_Sensor2" ><script> fn_SymbolStatus("Position_Sensor2", "Sensor3", "M_Position_Sensor_2") </script>
+               
+                <!--Nút nhấn Manual-->
+                <button id="bttManu_OnBT6" onclick= " fn_ChangeColor('M_BT6','cmd_BT6','bttManu_OnBT6');">ON</button>
+                <button id="bttManu_OffBT6" onclick= " fn_ChangeColoroff('M_BT6','cmd_BT6','bttManu_OffBT6');">OFF</button>
+                <button id="bttManu_OnBT7" onclick= " fn_ChangeColor('M_BT7','cmd_BT7','bttManu_OnBT7');">ON</button>
+                <button id="bttManu_OffBT7" onclick= " fn_ChangeColoroff('M_BT7','cmd_BT7','bttManu_OffBT7');">OFF</button>
+                <button id="bttManu_OnPump" onclick= " fn_ChangeColor('M_Pump','cmd_Pump','bttManu_OnPump');">ON</button>
+                <button id="bttManu_OffPump" onclick= " fn_ChangeColoroff('M_Pump','cmd_Pump','bttManu_OffPump');">OFF</button>
+                <button id="bttManu_OnMotorquay" onclick= " fn_ChangeColor('M_Motor_Quay','cmd_Motorquay','bttManu_OnMotorquay');">ON</button>
+                <button id="bttManu_OffMotorquay" onclick= " fn_ChangeColoroff('M_Motor_Quay','cmd_Motorquay','bttManu_OffMotorquay');">OFF</button>
+                <button id="bttManu_OnXylanhnang" onclick= " fn_ChangeColor('M_Xylanh_Nang','cmd_Xylanhnang','bttManu_OnXylanhnang');">ON</button>
+                <button id="bttManu_OffXylanhnang" onclick= " fn_ChangeColoroff('M_Xylanh_Nang','cmd_Xylanhnang','bttManu_OffXylanhnang');">OFF</button>
+                <button id="bttManu_OnMaycapnap" onclick= " fn_ChangeColor('M_MAY_CAP_NAP','cmd_Maycapnap','bttManu_OnMaycapnap');">ON</button>
+                <button id="bttManu_OffMaycapnap" onclick= " fn_ChangeColoroff('M_MAY_CAP_NAP','cmd_Maycapnap','bttManu_OffMaycapnap');">OFF</button>
+                <button id="bttManu_OnMamxoay" onclick= " fn_ChangeColor('M_Mam_Xoay','cmd_Mamxoay','bttManu_OnMamxoay');">ON</button>
+                <button id="bttManu_OffMamxoay" onclick= " fn_ChangeColoroff('M_Mam_Xoay','cmd_Mamxoay','bttManu_OffMamxoay');">OFF</button>
+                <!--Tag dạng Số thực-->
+                <input id="Real1" disabled="disabled" type="text" />   
+                <script>fn_IOFieldDataShow("Muc_Bom", "Real1", 2)</script> 
+                <br /><br />  
+              
+            </div>    
+      
+            <!-- //////////////Code cho màn hình 3////////////// -->
+            <div id = "Screen_3">
+                <img src="images/HTDN.PNG">
+                <img id = "Position_Sensor5" ><script> fn_SymbolStatus("Position_Sensor5", "Sensor3", "M_Position_Sensor_5") </script>
+                <img id = "BT_8" ><script> fn_SymbolStatus("BT_8", "BT", "Q_BT8") </script>
+                <img id = "Motor_BT_8" ><script> fn_SymbolStatus("Motor_BT_8", "Motor", "Q_BT8") </script>
+                <img id = "DN1" ><script> fn_SymbolStatus("DN1", "Maydannhan", "Q_MAY_DAN_NHAN") </script>
+                <img id = "DN2" ><script> fn_SymbolStatus("DN2", "Maydannhan", "Q_MAY_DAN_NHAN") </script>
+                <img id = "Xylanhkep1" ><script> fn_SymbolStatus("Xylanhkep1", "Xylanhkep", "Q_Xylanh_Kep") </script>
+                <!--Nút nhấn Manual-->
+                <button id="bttManu_OnBT8" onclick= " fn_ChangeColor('M_BT8','cmd_BT8','bttManu_OnBT8');">ON</button>
+                <button id="bttManu_OffBT8" onclick= " fn_ChangeColoroff('M_BT8','cmd_BT8','bttManu_OffBT8');">OFF</button>
+                <button id="bttManu_OnXylanhkep" onclick= " fn_ChangeColor('M_Xylanh_Kep','cmd_Xylanhkep','bttManu_OnXylanhkep');">ON</button>
+                <button id="bttManu_OffXylanhkep" onclick= " fn_ChangeColoroff('M_Xylanh_Kep','cmd_Xylanhkep','bttManu_OffXylanhkep');">OFF</button>
+                <button id="bttManu_OnMaydannhan" onclick= " fn_ChangeColor('M_MAY_DAN_NHAN','cmd_Maydannhan','bttManu_OnMaydannhan');">ON</button>
+                <button id="bttManu_OffMaydannhan" onclick= " fn_ChangeColoroff('M_MAY_DAN_NHAN','cmd_Maydannhan','bttManu_OffMaydannhan');">OFF</button>
+            </div>
+            <!-- //////////////Code cho màn hình 4////////////// -->
+            <div id = "Screen_4">
+                <img src="images/HTKTND.PNG">
+                <img id = "Position_Sensor8" ><script> fn_SymbolStatus("Position_Sensor8", "Sensor3", "M_Position_Sensor_8") </script>
+                <img id = "BT_10" ><script> fn_SymbolStatus("BT_10", "BT", "Q_BT10") </script>
+                <img id = "Motor_BT_10" ><script> fn_SymbolStatus("Motor_BT_10", "Motor", "Q_BT10") </script>
+                <img id = "Camera_2" ><script> fn_SymbolStatus("Camera_2", "Camera2", "Q_CAMERA_HTND") </script>
+                <img id = "Xylanhday_2" ><script> fn_SymbolStatus("Xylanhday_2", "Xylanhday", "Q_Cylinder_HTKTND") </script>
+                <img id = "Optical_Sensor2" ><script> fn_SymbolStatus("Optical_Sensor2", "Sensor1", "M_Optical_Sensor_2") </script>
+                <img id = "Optical2" ><script> fn_SymbolStatus("Optical2", "Optical", "M_Optical_Sensor_2") </script>
+                <img id = "CHAI_BT" ><script> fn_SymbolStatus("CHAI_BT", "Bth", "BT") </script>
+                <img id = "CHAI_SMV" ><script> fn_SymbolStatus("CHAI_SMV", "Bth", "SMV") </script>
+                <img id = "CHAI_MNCD" ><script> fn_SymbolStatus("CHAI_MNCD", "MNCD", "MNCD") </script>
+                <img id = "CHAI_NDDR" ><script> fn_SymbolStatus("CHAI_NDDR", "NDDR", "NDDR") </script>
+                <img id = "MAVACH" ><script> fn_SymbolStatus("MAVACH", "SMV", "SMV") </script>
+                <!--Nút nhấn Manual-->
+                <button id="bttManu_OnBT10" onclick= " fn_ChangeColor('M_BT10','cmd_BT10','bttManu_OnBT10');">ON</button>
+                <button id="bttManu_OffBT10" onclick= " fn_ChangeColoroff('M_BT10','cmd_BT10','bttManu_OffBT10');">OFF</button>
+                <button id="bttManu_OnCamera2" onclick= " fn_ChangeColor('M_CAMERA_HTND','cmd_Camera2','bttManu_OnCamera2');">ON</button>
+                <button id="bttManu_OffCamera2" onclick= " fn_ChangeColoroff('M_CAMERA_HTND','cmd_Camera2','bttManu_OffCamera2');">OFF</button>
+                <button id="bttManu_OnXylanhday2" onclick= " fn_ChangeColor('M_Cylinder_HTKTND','cmd_Xylanhday2','bttManu_OnXylanhday2');">ON</button>
+                <button id="bttManu_OffXylanhday2" onclick= " fn_ChangeColoroff('M_Cylinder_HTKTND','cmd_Xylanhday2','bttManu_OffXylanhday2');">OFF</button>
+                <input id="Integer3" disabled="disabled" type="text" />
+                <script>fn_IOFieldDataShow("QR_code", "Integer3", 0)</script>
+                 <br /><br />
+                <input id="Integer4" disabled="disabled" type="text" />
+                <script>fn_IOFieldDataShow("Lon_bth", "Integer4", 0)</script>
+                 <br /><br />  
+                <input id="Integer5" disabled="disabled" type="text" />
+                <script>fn_IOFieldDataShow("Lon_loi", "Integer5", 0)</script>
+                 <br /><br />
+                
+                   
+            <!--Nút nhấn sửa/lưu - Lưu ý: Nút nhấn lưu phải nằm trước nút nhấn sửa-->
+                <button id="btt_MNCD_Confirm" onclick= "fn_MNCD_ConfirmBtt()">Comfirm</button>  
+                <button id="btt_MNCD_Change" onclick= "fn_MNCD_ChangeBtt()">Change</button>       
+            
+                <input id="MN_CHUADAT" disabled="disabled" type="text" />   
+                <script>fn_MNCD_IOField_IO("MN_TT", "MN_CHUADAT", 0);</script> 
+
+            <!--Nút nhấn sửa/lưu - Lưu ý: Nút nhấn lưu phải nằm trước nút nhấn sửa-->
+                <button id="btt_SMV_Confirm" onclick= "fn_SMV_ConfirmBtt()">Comfirm</button>  
+                <button id="btt_SMV_Change" onclick= "fn_SMV_ChangeBtt()">Change</button>       
+           
+                <input id="QR_code_sai" disabled="disabled" type="text" />   
+                <script>fn_MNCD_IOField_IO("QR_code_TT", "QR_code_sai", 0);</script>     
+
+                <img id = "Temp5" ><script> fn_SymbolStatusMNCD("Temp5", "Temp", "MNCD", "MN_CHUADAT", "btt_MNCD_Confirm", "btt_MNCD_Change") </script>
+                <img id = "Temp6" ><script> fn_SymbolStatusMNCD("Temp6", "Temp", "SMV", "QR_code_sai", "btt_SMV_Confirm", "btt_SMV_Change") </script>
+                <button id="btt_BT" onclick= " fn_ChangeColor('BT','cmd_BT','btt_BT');">1</button>
+                <button id="btt_MNCD" onclick= " fn_ChangeColoroff1('MNCD','cmd_MNCD','btt_MNCD');">2</button>
+                <button id="btt_NDDR" onclick= " fn_ChangeColoroff1('NDDR','cmd_NDDR','btt_NDDR');">3</button>
+                <button id="btt_SMV" onclick= " fn_ChangeColoroff1('SMV','cmd_SMV','btt_SMV');">4</button>
+            </div>
+            <!-- //////////////Code cho màn hình 5////////////// -->
+            <div id = "Screen_5">
+                <img src="images/HTDT.PNG">
+                <img id = "Position_Sensor4" ><script> fn_SymbolStatus("Position_Sensor4", "Sensor3", "M_Position_Sensor_4") </script>
+                <img id = "BT_9" ><script> fn_SymbolStatus("BT_9", "BT", "Q_BT9") </script>
+                <img id = "Tham" ><script> fn_SymbolStatus("Tham", "Tham", "Temp") </script>
+                <img id = "Thanh_nang" ><script> fn_SymbolStatus("Thanh_nang", "Thanh", "Q_THANH_GIU") </script>
+                <img id = "Motor_BT_9" ><script> fn_SymbolStatus("Motor_BT_9", "Motornguoc", "Q_BT9") </script>
+                <img id = "Thanh_day" ><script> fn_SymbolStatus("Thanh_day", "Thanhday", "Q_THANH_DAY") </script>
+                <img id = "Thanhxep_1" ><script> fn_SymbolStatus("Thanhxep_1", "Thanh", "Q_4_THANH_MIET") </script>
+                <img id = "Thanhxep_2" ><script> fn_SymbolStatus("Thanhxep_2", "Thanh", "Q_4_THANH_MIET") </script>
+                <img id = "Thanhxep_3" ><script> fn_SymbolStatus("Thanhxep_3", "Thanh", "Q_4_THANH_MIET") </script>
+                <img id = "Thanhxep_4" ><script> fn_SymbolStatus("Thanhxep_4", "Thanh", "Q_4_THANH_MIET") </script>
+                <img id = "Xa_ngang" ><script> fn_SymbolStatus("Xa_ngang", "Xangang", "Temp") </script>
+                <img id = "Gac" ><script> fn_SymbolStatus("Gac", "Gac", "Temp") </script>
+                <img id = "Cot_1" ><script> fn_SymbolStatus("Cot_1", "Cot1", "Temp") </script>
+                <img id = "Cot_2" ><script> fn_SymbolStatus("Cot_2", "Cot2", "Temp") </script>
+                <!--Nút nhấn Manual-->
+                <button id="bttManu_OnBT9" onclick= " fn_ChangeColor('M_BT9','cmd_BT9','bttManu_OnBT9');">ON</button>
+                <button id="bttManu_OffBT9" onclick= " fn_ChangeColoroff('M_BT9','cmd_BT9','bttManu_OffBT9');">OFF</button>
+                <button id="bttManu_OnThanhnang" onclick= " fn_ChangeColor('M_THANH_GIU','cmd_Thanhnang','bttManu_OnThanhnang');">ON</button>
+                <button id="bttManu_OffThanhnang" onclick= " fn_ChangeColoroff('M_THANH_GIU','cmd_Thanhnang','bttManu_OffThanhnang');">OFF</button>
+                <button id="bttManu_OnThanhday" onclick= " fn_ChangeColor('M_THANH_DAY','cmd_Thanhday','bttManu_OnThanhday');">ON</button>
+                <button id="bttManu_OffThanhday" onclick= " fn_ChangeColoroff('M_THANH_DAY','cmd_Thanhday','bttManu_OffThanhday');">OFF</button>
+                <button id="bttManu_OnThanhxep" onclick= " fn_ChangeColor('M_4_THANH_MIET','cmd_4thanhxep','bttManu_OnThanhxep');">ON</button>
+                <button id="bttManu_OffThanhxep" onclick= " fn_ChangeColoroff('M_4_THANH_MIET','cmd_4thanhxep','bttManu_OffThanhxep');">OFF</button>
+            </div>        
+        </body>
+</html>

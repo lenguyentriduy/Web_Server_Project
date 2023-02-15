@@ -1,0 +1,183 @@
+/*Màn hình chính*/
+#Screen_5 {
+    position: absolute; 
+    left: 215px; top: 11px; 
+    width: 1008px; height: 500px;
+    background-color: rgb(241, 116, 116); 
+}
+/*Băng tải 9*/
+#BT_9 {
+    position: absolute; 
+    left: 60px; top: 405px; 
+    width: 740px; height: 50px;
+}
+/*Motor BT9*/
+#Motor_BT_9 {
+    position: absolute; 
+    left: 600px; top: 475px; 
+    width: 60px; height: 40px;
+}
+#Thanhxep_1 {
+    position: absolute; 
+    left: 250px; top: 290px; 
+    width: 10px; height: 103px;
+}
+#Thanhxep_2 {
+    position: absolute; 
+    left: 277px; top: 311px; 
+    width: 10px; height: 87px;
+}
+#Thanhxep_3 {
+    position: absolute; 
+    left: 315px; top: 288px; 
+    width: 10px; height: 105px;
+}
+#Thanhxep_4 {
+    position: absolute; 
+    left: 348px; top: 271px; 
+    width: 10px; height: 121px;
+}
+#Thanh_day {
+    position: absolute; 
+    left: 300px; top: 230px; 
+    width: 325px; height: 163px;
+}
+/*Nút On BT9*/
+#bttManu_OnBT9 {
+    border:rgb(0, 0, 0); 
+    position: absolute; 
+    background-color: rgb(204, 204, 204); 
+    color: rgb(0, 0, 0);   
+    text-align: center;
+    display: inline-block;
+    font-size: 13px; 
+    cursor: pointer;
+    width: 40px; height: 25px;  
+    left: 810px; top: 98px;
+}
+/*Nút Off BT9*/
+#bttManu_OffBT9 {
+    border:rgb(0, 0, 0); 
+    position: absolute; 
+    background-color: rgb(255, 0, 0); 
+    color: rgb(0, 0, 0);   
+    text-align: center;
+    display: inline-block;
+    font-size: 13px; 
+    cursor: pointer;
+    width: 40px; height: 25px;  
+    left: 860px; top: 98px;
+}
+/*Nút On Thanh đẩy*/
+#bttManu_OnThanhday {
+    border:rgb(0, 0, 0); 
+    position: absolute; 
+    background-color: rgb(204, 204, 204); 
+    color: rgb(0, 0, 0);   
+    text-align: center;
+    display: inline-block;
+    font-size: 13px; 
+    cursor: pointer;
+    width: 40px; height: 25px;  
+    left: 810px; top: 166px;
+}
+/*Nút Off Thanh đẩy*/
+#bttManu_OffThanhday {
+    border:rgb(0, 0, 0); 
+    position: absolute; 
+    background-color: rgb(255, 0, 0); 
+    color: rgb(0, 0, 0);   
+    text-align: center;
+    display: inline-block;
+    font-size: 13px; 
+    cursor: pointer;
+    width: 40px; height: 25px;  
+    left: 860px; top: 166px;
+}
+/*Nút On Thanh xếp*/
+#bttManu_OnThanhxep {
+    border:rgb(0, 0, 0); 
+    position: absolute; 
+    background-color: rgb(204, 204, 204); 
+    color: rgb(0, 0, 0);   
+    text-align: center;
+    display: inline-block;
+    font-size: 13px; 
+    cursor: pointer;
+    width: 40px; height: 25px;  
+    left: 810px; top: 200px;
+}
+/*Nút Off Thanh xếp*/
+#bttManu_OffThanhxep {
+    border:rgb(0, 0, 0); 
+    position: absolute; 
+    background-color: rgb(255, 0, 0); 
+    color: rgb(0, 0, 0);   
+    text-align: center;
+    display: inline-block;
+    font-size: 13px; 
+    cursor: pointer;
+    width: 40px; height: 25px;  
+    left: 860px; top: 200px;
+}
+/*Nút On Thanh nâng*/
+#bttManu_OnThanhnang {
+    border:rgb(0, 0, 0); 
+    position: absolute; 
+    background-color: rgb(204, 204, 204); 
+    color: rgb(0, 0, 0);   
+    text-align: center;
+    display: inline-block;
+    font-size: 13px; 
+    cursor: pointer;
+    width: 40px; height: 25px;  
+    left: 810px; top: 132px;
+}
+/*Nút Off Thanh nâng*/
+#bttManu_OffThanhnang {
+    border:rgb(0, 0, 0); 
+    position: absolute; 
+    background-color: rgb(255, 0, 0); 
+    color: rgb(0, 0, 0);   
+    text-align: center;
+    display: inline-block;
+    font-size: 13px; 
+    cursor: pointer;
+    width: 40px; height: 25px;  
+    left: 860px; top: 132px;
+}
+#Xa_ngang {
+    position: absolute; 
+    left: 157px; top: 278px; 
+    width: 416px; height: 40px;
+}
+#Cot_1 {
+    position: absolute; 
+    left: 153px; top: 284px; 
+    width: 42px; height: 213px;
+}
+#Cot_2 {
+    position: absolute; 
+    left: 540px; top: 284px; 
+    width: 42px; height: 213px;
+}
+#Tham {
+    position: absolute; 
+    left: 160px; top: 398px; 
+    width: 260px; height: 56px;
+}
+#Gac {
+    position: absolute; 
+    left: 556px; top: 224px; 
+    width: 142px; height: 80px;
+}
+#Thanh_nang {
+    position: absolute; 
+    left: 350px; top: 395px; 
+    width: 10px; height: 30px;
+}
+#Position_Sensor4 {
+    position: absolute; 
+    left: 280px; top: 440px; 
+    width: 16px; height: 40px;
+}
